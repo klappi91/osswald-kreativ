@@ -125,7 +125,7 @@ export function Hero() {
         <div
           className="absolute inset-0 h-full w-full bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage: "url('/images/hero-workshop.webp')",
+            backgroundImage: "url('/images/hero-muscle.webp')",
           }}
         />
         {/* Gradient overlays for depth */}
