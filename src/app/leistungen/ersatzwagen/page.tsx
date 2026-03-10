@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, Phone, Car } from "lucide-react";
 
@@ -22,18 +23,22 @@ export default function ErsatzwagenPage() {
     <>
       {/* ── Hero Banner ── */}
       <section className="relative flex h-[40vh] min-h-[320px] items-end overflow-hidden bg-[#1a1a1a]">
-        <div className="absolute inset-0 bg-gradient-to-br from-[#1a1a1a] via-[#2a2a2a] to-[#1a1a1a]" />
+        {/* Background image */}
+        <div className="absolute inset-0">
+          <Image
+            src="/images/service-ersatzwagen.webp"
+            alt="Ersatzwagen-Service bei Autohaus Osswald"
+            fill
+            className="object-cover object-center"
+            priority
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#1a1a1a]/90 via-[#1a1a1a]/70 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#1a1a1a] via-[#1a1a1a]/30 to-transparent" />
+        </div>
 
         {/* Decorative elements */}
         <div className="absolute bottom-0 left-0 h-1 w-1/3 bg-[#f28627]" />
         <div className="absolute left-[6vw] top-0 h-full w-[2px] bg-gradient-to-b from-transparent via-[#f28627]/40 to-transparent" />
-        <div
-          className="absolute right-0 top-0 h-full w-1/4 bg-[#f28627]/[0.04]"
-          style={{ clipPath: "polygon(100% 0, 0 0, 100% 100%)" }}
-        />
-        <div className="pointer-events-none absolute -right-10 bottom-0 select-none font-[var(--font-display)] text-[18rem] font-bold leading-none text-white/[0.03]">
-          E
-        </div>
 
         <div className="relative z-10 mx-auto w-full max-w-7xl px-6 pb-12 sm:px-10 lg:px-16">
           <Link
