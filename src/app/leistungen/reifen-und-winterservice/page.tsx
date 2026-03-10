@@ -6,19 +6,19 @@ import { ArrowRight, Phone, Snowflake, Check } from "lucide-react";
 export const metadata: Metadata = {
   title: "Reifen- und Winterservice",
   description:
-    "Umfassender Reifen- und Winterservice bei Autohaus Osswald in Diepholz. Wintercheck, Raderwechsel und gunstige Winterreifen.",
+    "Umfassender Reifen- und Winterservice bei Autohaus Osswald in Diepholz. Wintercheck, Räderwechsel und günstige Winterreifen.",
 };
 
 const checklist = [
   "Abgasanlage",
   "Batterie",
   "Beleuchtung und Warn- und Blinkanlagen",
-  "Bremsanlage, Bremsbelagen und Bremsflussigkeit",
+  "Bremsanlage, Bremsbelagen und Bremsflüssigkeit",
   "Zustand der Reifen, inklusive Reserverad",
   "Reifendruck",
-  "Olstand",
+  "Ölstand",
   "Scheibenwisch-Waschanlage, inklusive frostsicherem Scheibenwischwasser",
-  "Turschlosser und Schliesszylinder",
+  "Türschlösser und Schließzylinder",
 ];
 
 const otherSubServices = [
@@ -45,7 +45,7 @@ export default function ReifenWinterservicePage() {
         </div>
 
         <div className="absolute bottom-0 left-0 h-1 w-1/3 bg-[#f28627]" />
-        <div className="absolute left-[6vw] top-0 h-full w-[2px] bg-gradient-to-b from-transparent via-[#f28627]/40 to-transparent" />
+        <div className="absolute left-[6vw] top-0 hidden h-full w-[2px] bg-gradient-to-b from-transparent via-[#f28627]/40 to-transparent md:block" />
 
         <div className="relative z-10 mx-auto w-full max-w-7xl px-6 pb-12 sm:px-10 lg:px-16">
           <Link
@@ -77,15 +77,15 @@ export default function ReifenWinterservicePage() {
             </div>
 
             <h2 className="font-[var(--font-display)] text-3xl font-bold uppercase leading-tight tracking-tight text-[#1a1a1a] sm:text-4xl">
-              Fit fur{" "}
+              Fit für{" "}
               <span className="text-[#f28627]">Eis und Schnee</span>
             </h2>
 
             <p className="mt-8 text-xl leading-relaxed text-[#474747]">
-              Wenn die kalte Jahreszeit ansteht, bieten wir Ihnen speziell fur
+              Wenn die kalte Jahreszeit ansteht, bieten wir Ihnen speziell für
               Ihr Fahrzeug einen umfassenden Reifen- und Winterservice, der Ihr
-              Auto fit macht fur Eis und Schnee. Zusatzlich zu dem Servicepaket
-              bieten wir Ihnen ausserdem Reifen zu super Preisen an.
+              Auto fit macht für Eis und Schnee. Zusätzlich zu dem Servicepaket
+              bieten wir Ihnen außerdem Reifen zu super Preisen an.
             </p>
           </div>
         </div>
@@ -132,8 +132,8 @@ export default function ReifenWinterservicePage() {
         <div className="mx-auto max-w-7xl px-6 sm:px-10 lg:px-16">
           <div className="mx-auto max-w-3xl">
             <p className="text-xl leading-relaxed text-[#474747]">
-              Gerne stellen wir Ihnen auch unsere gunstigen Winterreifen
-              namhafter Hersteller vor. Wir ubernehmen den Raderwechsel und bei
+              Gerne stellen wir Ihnen auch unsere günstigen Winterreifen
+              namhafter Hersteller vor. Wir übernehmen den Räderwechsel und bei
               Bedarf auch die Einlagerung Ihrer Sommerreifen.
             </p>
 

@@ -29,12 +29,12 @@ const services = [
   { label: "Motorinstandsetzung", icon: Cog },
   { label: "Getriebeinstandsetzung", icon: Cog },
   { label: "Wartung und Inspektionen", icon: Gauge },
-  { label: "Olwechsel", icon: Gauge },
-  { label: "Computergestutzte Motordiagnose", icon: Gauge },
+  { label: "Ölwechsel", icon: Gauge },
+  { label: "Computergestützte Motordiagnose", icon: Gauge },
   { label: "Klimaanlagenservice", icon: Thermometer },
   { label: "Oldtimer Restauration", icon: Clock },
   { label: "Restauration/Umbauten von US-Cars", icon: Car },
-  { label: "TUV / AU", icon: Shield },
+  { label: "TÜV / AU", icon: Shield },
   { label: "Ersatzteilverkauf", icon: Wrench },
 ];
 
@@ -68,7 +68,7 @@ export default function LeistungenPage() {
 
         {/* Decorative accent */}
         <div className="absolute bottom-0 left-0 h-1 w-1/3 bg-[#f28627]" />
-        <div className="absolute left-[6vw] top-0 h-full w-[2px] bg-gradient-to-b from-transparent via-[#f28627]/40 to-transparent" />
+        <div className="absolute left-[6vw] top-0 hidden h-full w-[2px] bg-gradient-to-b from-transparent via-[#f28627]/40 to-transparent md:block" />
 
         <div className="relative z-10 mx-auto w-full max-w-7xl px-6 pb-12 sm:px-10 lg:px-16">
           <p className="mb-3 font-[var(--font-display)] text-sm font-medium uppercase tracking-[0.3em] text-[#f28627]">
@@ -101,14 +101,14 @@ export default function LeistungenPage() {
                 Wir arbeiten typenoffen und reparieren fast jedes Auto, wobei wir
                 durch jahrelange Erfahrungen auch unsere Grenzen kennen gelernt
                 haben! Egal ob Kupplung, Bremsen, Auspuff, Motor, Getriebe,
-                Fahrwerk, Elektrik &ndash; wir konnen das!!
+                Fahrwerk, Elektrik &ndash; wir können das!!
               </p>
               <p className="mt-4 text-lg leading-relaxed text-[#474747]">
-                Fur Durchsichten und Wartungen nutzen wir die Servicevorgaben der
+                Für Durchsichten und Wartungen nutzen wir die Servicevorgaben der
                 Fahrzeughersteller. Oft kommen Kunden mit Problemen, die andere
-                Werkstatten nicht losen konnten. Wenn wir es nicht schaffen,
-                wissen wir fast immer einen Losungsweg oder kennen Partner, die
-                helfen konnen.
+                Werkstätten nicht lösen konnten. Wenn wir es nicht schaffen,
+                wissen wir fast immer einen Lösungsweg oder kennen Partner, die
+                helfen können.
               </p>
             </div>
 
@@ -173,8 +173,8 @@ export default function LeistungenPage() {
             <p className="mt-8 text-lg leading-relaxed text-[#474747]">
               Vor Auftragserteilung wird Ihnen ein Kostenvoranschlag unterbreitet
               und ein verbindlicher Fertigstellungstermin genannt. Bei
-              auftretenden Problemen wahrend der Reparaturdurchfuhrung werden Sie
-              sofort kontaktiert. Unangenehme &bdquo;Uberraschungen&ldquo; bei
+              auftretenden Problemen während der Reparaturdurchführung werden Sie
+              sofort kontaktiert. Unangenehme &bdquo;Überraschungen&ldquo; bei
               der Fahrzeugabholung gibt es bei uns nicht!
             </p>
             <p className="mt-4 text-xl font-bold text-[#1a1a1a]">
@@ -235,12 +235,12 @@ export default function LeistungenPage() {
               </h2>
               <p className="mt-6 text-lg leading-relaxed text-white/70">
                 Unsere Preisgestaltung basiert auf Normzeitvorgaben der
-                Hersteller und Stundenverrechnungssatzen.
+                Hersteller und Stundenverrechnungssätzen.
                 Festpreisvereinbarungen und Pauschalen werden individuell
-                verhandelt und sind grundsatzlich moglich!
+                verhandelt und sind grundsätzlich möglich!
               </p>
               <p className="mt-4 text-lg leading-relaxed text-white/70">
-                Sie entscheiden uber die verwendeten Ersatzteile. Wir bieten
+                Sie entscheiden über die verwendeten Ersatzteile. Wir bieten
                 Originalteile des Fahrzeugherstellers, Teile verschiedenster
                 Anbieter vom freien Markt und Gebrauchtteile aus
                 Autoverwertungen an.
@@ -250,8 +250,8 @@ export default function LeistungenPage() {
               {[
                 "Kostenvoranschlag vor Auftragserteilung",
                 "Verbindliche Fertigstellungstermine",
-                "Festpreise auf Anfrage moglich",
-                "Original-, Markt- oder Gebrauchtteile — Sie wahlen",
+                "Festpreise auf Anfrage möglich",
+                "Original-, Markt- oder Gebrauchtteile — Sie wählen",
                 "Altteile auf Wunsch zurück oder Schadenserklärung",
               ].map((item, i) => (
                 <div key={i} className="flex items-start gap-4">

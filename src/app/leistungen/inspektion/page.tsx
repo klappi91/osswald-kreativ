@@ -6,7 +6,7 @@ import { ArrowRight, Phone, ClipboardCheck } from "lucide-react";
 export const metadata: Metadata = {
   title: "Inspektion",
   description:
-    "Inspektion zum attraktiven Komplettpreis bei Autohaus Osswald in Diepholz. Alle Marken, Meisterqualitat.",
+    "Inspektion zum attraktiven Komplettpreis bei Autohaus Osswald in Diepholz. Alle Marken, Meisterqualität.",
 };
 
 const otherSubServices = [
@@ -36,7 +36,7 @@ export default function InspektionPage() {
         </div>
 
         <div className="absolute bottom-0 left-0 h-1 w-1/3 bg-[#f28627]" />
-        <div className="absolute left-[6vw] top-0 h-full w-[2px] bg-gradient-to-b from-transparent via-[#f28627]/40 to-transparent" />
+        <div className="absolute left-[6vw] top-0 hidden h-full w-[2px] bg-gradient-to-b from-transparent via-[#f28627]/40 to-transparent md:block" />
 
         <div className="relative z-10 mx-auto w-full max-w-7xl px-6 pb-12 sm:px-10 lg:px-16">
           <Link
@@ -71,7 +71,7 @@ export default function InspektionPage() {
             </h2>
 
             <p className="mt-8 text-xl leading-relaxed text-[#474747]">
-              Wir fuhren Ihre Inspektion zum besonders attraktiven Komplettpreis
+              Wir führen Ihre Inspektion zum besonders attraktiven Komplettpreis
               durch!
             </p>
 

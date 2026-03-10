@@ -6,7 +6,7 @@ import { ArrowRight, Phone, Clock } from "lucide-react";
 export const metadata: Metadata = {
   title: "24-Stunden-Annahme",
   description:
-    "Fahrzeugabgabe rund um die Uhr bei Autohaus Osswald in Diepholz. Auch ohne Termin ausserhalb der Offnungszeiten.",
+    "Fahrzeugabgabe rund um die Uhr bei Autohaus Osswald in Diepholz. Auch ohne Termin außerhalb der Öffnungszeiten.",
 };
 
 const otherSubServices = [
@@ -36,7 +36,7 @@ export default function AnnahmePage() {
         </div>
 
         <div className="absolute bottom-0 left-0 h-1 w-1/3 bg-[#f28627]" />
-        <div className="absolute left-[6vw] top-0 h-full w-[2px] bg-gradient-to-b from-transparent via-[#f28627]/40 to-transparent" />
+        <div className="absolute left-[6vw] top-0 hidden h-full w-[2px] bg-gradient-to-b from-transparent via-[#f28627]/40 to-transparent md:block" />
 
         <div className="relative z-10 mx-auto w-full max-w-7xl px-6 pb-12 sm:px-10 lg:px-16">
           <Link
@@ -74,14 +74,14 @@ export default function AnnahmePage() {
 
             <p className="mt-8 text-xl leading-relaxed text-[#474747]">
               Ihr Fahrzeug muss zur Inspektion oder es steht eine Reparatur an,
-              Sie konnen es jedoch nicht zu unseren ublichen Offnungszeiten
+              Sie können es jedoch nicht zu unseren üblichen Öffnungszeiten
               vorbei bringen?
             </p>
 
             <p className="mt-4 text-xl leading-relaxed text-[#474747]">
               Bei ATO - Autotechnik Osswald kein Problem: Stellen Sie Ihr Auto
-              auch ohne vorige Terminvereinbarung ausserhalb unserer
-              Geschaftszeiten einfach auf dem Hof ab.
+              auch ohne vorige Terminvereinbarung außerhalb unserer
+              Geschäftszeiten einfach auf dem Hof ab.
             </p>
 
             <div className="mt-12">

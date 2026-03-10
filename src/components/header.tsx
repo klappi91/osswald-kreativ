@@ -226,6 +226,9 @@ export function Header() {
                   }`}
                   style={{ transitionDelay: mobileOpen ? `${index * 80}ms` : "0ms" }}
                 >
+                  <span className="mr-4 font-display text-sm text-orange/60">
+                    0{index + 1}
+                  </span>
                   <span className="font-display text-3xl font-bold uppercase tracking-wider text-white">
                     {item.label}
                   </span>

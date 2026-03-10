@@ -6,7 +6,7 @@ import { ArrowRight, Phone, Car } from "lucide-react";
 export const metadata: Metadata = {
   title: "Ersatzwagen",
   description:
-    "Ersatzwagen zu gunstigen Konditionen bei Autohaus Osswald in Diepholz. Bleiben Sie mobil wahrend Ihr Auto in der Werkstatt ist.",
+    "Ersatzwagen zu günstigen Konditionen bei Autohaus Osswald in Diepholz. Bleiben Sie mobil während Ihr Auto in der Werkstatt ist.",
 };
 
 const otherSubServices = [
@@ -36,7 +36,7 @@ export default function ErsatzwagenPage() {
         </div>
 
         <div className="absolute bottom-0 left-0 h-1 w-1/3 bg-[#f28627]" />
-        <div className="absolute left-[6vw] top-0 h-full w-[2px] bg-gradient-to-b from-transparent via-[#f28627]/40 to-transparent" />
+        <div className="absolute left-[6vw] top-0 hidden h-full w-[2px] bg-gradient-to-b from-transparent via-[#f28627]/40 to-transparent md:block" />
 
         <div className="relative z-10 mx-auto w-full max-w-7xl px-6 pb-12 sm:px-10 lg:px-16">
           <Link
@@ -72,8 +72,8 @@ export default function ErsatzwagenPage() {
             </h2>
 
             <p className="mt-8 text-xl leading-relaxed text-[#474747]">
-              Wahrend Sie Ihr Auto zur Uberarbeitung in unserer Werkstatt
-              lassen, konnen wir Ihnen einen Ersatzwagen anbieten. Zu gunstigen
+              Während Sie Ihr Auto zur Überarbeitung in unserer Werkstatt
+              lassen, können wir Ihnen einen Ersatzwagen anbieten. Zu günstigen
               Konditionen bleiben Sie so mobil!
             </p>
 
