@@ -25,7 +25,6 @@ const services = [
   { label: "Reparaturen aller Art und Modellvarianten", icon: Wrench },
   { label: "Steinschlag Reparatur", icon: Shield },
   { label: "Unfall- und Karosserieinstandsetzung", icon: Car },
-  { label: "Blechschaden-Ausbesserung (auch Hagelschaden)", icon: Car },
   { label: "Lackierung", icon: Sparkles },
   { label: "Motorinstandsetzung", icon: Cog },
   { label: "Getriebeinstandsetzung", icon: Cog },

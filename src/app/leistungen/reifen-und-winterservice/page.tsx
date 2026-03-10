@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, Phone, Snowflake, Check, Calendar, ShieldCheck, RefreshCw } from "lucide-react";
+import { ArrowRight, Phone, Snowflake, Check } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Reifen- und Winterservice",
@@ -32,7 +32,6 @@ export default function ReifenWinterservicePage() {
     <>
       {/* ── Hero Banner ── */}
       <section className="relative flex h-[40vh] min-h-[320px] items-end overflow-hidden bg-[#1a1a1a]">
-        {/* Background image */}
         <div className="absolute inset-0">
           <Image
             src="/images/service-winterservice.webp"
@@ -45,7 +44,6 @@ export default function ReifenWinterservicePage() {
           <div className="absolute inset-0 bg-gradient-to-t from-[#1a1a1a] via-[#1a1a1a]/30 to-transparent" />
         </div>
 
-        {/* Decorative elements */}
         <div className="absolute bottom-0 left-0 h-1 w-1/3 bg-[#f28627]" />
         <div className="absolute left-[6vw] top-0 h-full w-[2px] bg-gradient-to-b from-transparent via-[#f28627]/40 to-transparent" />
 
@@ -106,6 +104,9 @@ export default function ReifenWinterservicePage() {
             <h3 className="font-[var(--font-display)] text-3xl font-bold uppercase tracking-tight text-white sm:text-4xl">
               Unser <span className="text-[#f28627]">Winter-Check</span>
             </h3>
+            <p className="mt-4 max-w-2xl text-lg leading-relaxed text-white/60">
+              Unser Servicepaket umfasst die Kontrolle von:
+            </p>
           </div>
 
           <div className="grid gap-3 sm:grid-cols-2">
@@ -126,106 +127,20 @@ export default function ReifenWinterservicePage() {
         </div>
       </section>
 
-      {/* ── Reifenservice ganzjährig ── */}
+      {/* ── Winterreifen & Räderwechsel ── */}
       <section className="bg-white py-20 sm:py-28">
         <div className="mx-auto max-w-7xl px-6 sm:px-10 lg:px-16">
           <div className="mx-auto max-w-3xl">
-            <div className="mb-8 flex items-center gap-4">
-              <RefreshCw className="h-10 w-10 shrink-0 text-[#f28627]" />
-              <div className="h-1 w-16 bg-[#f28627]" />
-            </div>
-
-            <h2 className="font-[var(--font-display)] text-3xl font-bold uppercase leading-tight tracking-tight text-[#1a1a1a] sm:text-4xl">
-              Reifenservice{" "}
-              <span className="text-[#f28627]">ganzjahrig</span>
-            </h2>
-
-            <p className="mt-8 text-xl leading-relaxed text-[#474747]">
-              Nicht nur im Winter sind wir fur Sie da — unser Reifenservice
-              begleitet Sie durch das ganze Jahr. Ob saisonaler Wechsel oder
-              Beratung zu neuen Reifen: Wir kummern uns darum.
+            <p className="text-xl leading-relaxed text-[#474747]">
+              Gerne stellen wir Ihnen auch unsere gunstigen Winterreifen
+              namhafter Hersteller vor. Wir ubernehmen den Raderwechsel und bei
+              Bedarf auch die Einlagerung Ihrer Sommerreifen.
             </p>
 
-            <div className="mt-10 grid gap-4 sm:grid-cols-2">
-              {[
-                "Reifenwechsel Sommer \u2194 Winter",
-                "Einlagerung von Sommerreifen",
-                "Gunstige Winterreifen namhafter Hersteller",
-                "Reifendruckkontrolle",
-              ].map((item, i) => (
-                <div
-                  key={i}
-                  className="flex items-start gap-4 border border-[#1a1a1a]/10 bg-[#f8f8f8] p-5 transition-all duration-300 hover:border-[#f28627]/40"
-                >
-                  <div className="flex h-7 w-7 shrink-0 items-center justify-center bg-[#f28627]">
-                    <Check className="h-4 w-4 text-white" />
-                  </div>
-                  <p className="text-base leading-relaxed text-[#474747]">
-                    {item}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ── Wann sollten Sie kommen? ── */}
-      <section className="relative overflow-hidden bg-[#1a1a1a] py-20 sm:py-28">
-        <div
-          className="absolute right-0 top-0 h-full w-1/4 bg-[#f28627]/[0.04]"
-          style={{ clipPath: "polygon(100% 0, 100% 100%, 0 0)" }}
-        />
-
-        <div className="relative mx-auto max-w-7xl px-6 sm:px-10 lg:px-16">
-          <div className="mx-auto max-w-3xl">
-            <div className="mb-8 flex items-center gap-4">
-              <Calendar className="h-10 w-10 shrink-0 text-[#f28627]" />
-              <div className="h-1 w-16 bg-[#f28627]" />
-            </div>
-
-            <h2 className="font-[var(--font-display)] text-3xl font-bold uppercase leading-tight tracking-tight text-white sm:text-4xl">
-              Wann sollten{" "}
-              <span className="text-[#f28627]">Sie kommen?</span>
-            </h2>
-
-            <div className="mt-10 space-y-6">
-              <div className="border-l-4 border-[#f28627] bg-white/[0.05] p-6">
-                <p className="font-[var(--font-display)] text-lg font-bold uppercase tracking-wider text-[#f28627]">
-                  Faustregel: &quot;Von O bis O&quot;
-                </p>
-                <p className="mt-2 text-base leading-relaxed text-white/80">
-                  Von Oktober bis Ostern sollten Winterreifen aufgezogen sein.
-                  Kommen Sie rechtzeitig vor dem ersten Frost, um lange
-                  Wartezeiten zu vermeiden.
-                </p>
-              </div>
-
-              <p className="text-lg leading-relaxed text-white/70">
-                Sie sind unsicher, ob Ganzjahresreifen fur Sie in Frage kommen?
-                Wir beraten Sie gerne — individuell und unverbindlich.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ── Garantie & Qualität ── */}
-      <section className="bg-white py-20 sm:py-28">
-        <div className="mx-auto max-w-7xl px-6 sm:px-10 lg:px-16">
-          <div className="mx-auto max-w-3xl">
-            <div className="flex items-start gap-6 border-2 border-[#f28627]/20 bg-[#f28627]/[0.04] p-8">
-              <ShieldCheck className="h-10 w-10 shrink-0 text-[#f28627]" />
-              <div>
-                <h3 className="font-[var(--font-display)] text-xl font-bold uppercase tracking-wider text-[#1a1a1a]">
-                  Garantie &amp; Qualitat
-                </h3>
-                <p className="mt-3 text-base leading-relaxed text-[#474747]">
-                  Alle Arbeiten werden von unseren geschulten Mechanikern
-                  durchgefuhrt. Auf verbaute Neuteile gewahren wir Garantie.
-                </p>
-              </div>
-            </div>
+            <p className="mt-6 text-xl leading-relaxed text-[#474747]">
+              Sie haben Interesse an unserem Wintercheck? Dann nehmen Sie
+              Kontakt auf und vereinbaren Sie einen Termin.
+            </p>
 
             <div className="mt-12">
               <Link
@@ -234,7 +149,7 @@ export default function ReifenWinterservicePage() {
               >
                 <span className="inline-flex items-center gap-3 skew-x-6">
                   <Phone className="h-5 w-5" />
-                  Jetzt informieren
+                  Termin vereinbaren
                   <ArrowRight className="h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />
                 </span>
               </Link>
