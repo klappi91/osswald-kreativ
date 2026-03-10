@@ -3,6 +3,7 @@ import { Catamaran, Oswald } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
+import { StickyCta } from "@/components/sticky-cta";
 
 const catamaran = Catamaran({
   variable: "--font-sans",
@@ -54,6 +55,7 @@ export default function RootLayout({
         <Header />
         <main>{children}</main>
         <Footer />
+        <StickyCta />
       </body>
     </html>
   );

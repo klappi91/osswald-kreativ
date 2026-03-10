@@ -131,6 +131,7 @@ export function Hero() {
         {/* Gradient overlays for depth */}
         <div className="absolute inset-0 bg-gradient-to-r from-[#1a1a1a]/90 via-[#1a1a1a]/60 to-transparent" />
         <div className="absolute inset-0 bg-gradient-to-t from-[#1a1a1a]/80 via-transparent to-[#1a1a1a]/30" />
+        <div className="noise-overlay" />
       </div>
 
       {/* Decorative orange accent shape */}
@@ -148,6 +149,9 @@ export function Hero() {
       >
         <div className="mx-auto w-full max-w-7xl px-6 py-32 sm:px-10 lg:px-16">
           <div className="max-w-3xl">
+            {/* Mobile accent line */}
+            <div className="block h-[3px] w-16 bg-[#f28627] mb-6 md:hidden" />
+
             {/* Badge */}
             <div data-hero-badge className="mb-8 opacity-0">
               <span className="inline-flex items-center gap-2 rounded-full bg-[#f28627] px-5 py-2 text-sm font-bold uppercase tracking-wider text-white shadow-lg shadow-[#f28627]/30">

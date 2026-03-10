@@ -276,13 +276,13 @@ export function HomeSections() {
 
             {/* Image — right side, overlapping */}
             <AnimatedSection
-              className="relative lg:col-span-6"
+              className="relative -mx-6 sm:-mx-10 md:mx-0 lg:col-span-6"
               delay={0.2}
             >
               <div className="relative">
                 {/* Orange accent box behind image */}
-                <div className="absolute -right-4 -top-4 h-full w-full rounded-sm bg-[#f28627]/10 md:-right-8 md:-top-8" />
-                <div className="relative aspect-[4/3] w-full overflow-hidden rounded-sm shadow-2xl lg:-ml-12">
+                <div className="absolute -right-4 -top-4 hidden h-full w-full rounded-sm bg-[#f28627]/10 md:block md:-right-8 md:-top-8" />
+                <div className="relative aspect-[4/3] w-full overflow-hidden rounded-none shadow-2xl sm:rounded-sm lg:-ml-12">
                   <ParallaxImage
                     src="/images/cache_2447480172.jpg"
                     alt="Werkstatt Autohaus Oßwald"
@@ -290,7 +290,7 @@ export function HomeSections() {
                   />
                 </div>
                 {/* Floating badge */}
-                <div className="absolute -bottom-6 -left-4 rounded-sm bg-[#1a1a1a] px-6 py-4 shadow-xl md:-bottom-8 md:-left-8">
+                <div className="absolute -bottom-6 left-4 rounded-sm bg-[#1a1a1a] px-6 py-4 shadow-xl sm:-left-4 md:-bottom-8 md:-left-8">
                   <p className="font-[var(--font-display)] text-3xl font-bold text-[#f28627]">
                     25+
                   </p>
@@ -334,9 +334,13 @@ export function HomeSections() {
           </AnimatedSection>
 
           {/* Service cards grid */}
-          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="relative">
+            {/* Right fade edge on mobile */}
+            <div className="pointer-events-none absolute right-0 top-0 z-10 h-full w-8 bg-gradient-to-l from-[#1a1a1a] to-transparent sm:hidden" />
+
+            <div className="flex gap-4 overflow-x-auto snap-x snap-mandatory pb-4 scrollbar-hide sm:grid sm:grid-cols-2 sm:overflow-visible sm:gap-6 sm:pb-0 lg:grid-cols-3">
             {services.map((service) => (
-              <AnimatedSection key={service.title}>
+              <AnimatedSection key={service.title} className="min-w-[280px] shrink-0 snap-start sm:min-w-0 sm:shrink">
                 <Link
                   href={service.href}
                   className="group relative block overflow-hidden rounded-sm border border-white/5 bg-[#2a2a2a] p-8 transition-all duration-500 hover:border-[#f28627]/30 hover:bg-[#2a2a2a]/80 hover:shadow-xl hover:shadow-[#f28627]/5"
@@ -367,6 +371,7 @@ export function HomeSections() {
                 </Link>
               </AnimatedSection>
             ))}
+          </div>
           </div>
 
           {/* CTA under services */}
@@ -407,24 +412,24 @@ export function HomeSections() {
           </AnimatedSection>
 
           {/* USP grid — alternating layout */}
-          <div className="grid grid-cols-1 gap-0 md:grid-cols-2 lg:grid-cols-3">
+          <div className="grid grid-cols-2 gap-0 md:grid-cols-2 lg:grid-cols-3">
             {usps.map((usp, i) => (
               <AnimatedSection key={usp.title}>
                 <div
-                  className={`group relative border border-[#e5e5e5]/60 p-8 transition-all duration-500 hover:bg-[#1a1a1a] hover:border-[#1a1a1a] md:p-10 ${
-                    i % 2 === 1 ? "md:translate-y-8" : ""
+                  className={`group relative border border-[#e5e5e5]/60 p-4 transition-all duration-500 hover:bg-[#1a1a1a] hover:border-[#1a1a1a] sm:p-8 md:p-10 ${
+                    i % 2 === 1 ? "translate-y-4 md:translate-y-8" : ""
                   }`}
                 >
                   {/* Large number background */}
-                  <span className="absolute right-4 top-4 font-[var(--font-display)] text-6xl font-bold text-[#f28627]/[0.07] transition-colors duration-500 group-hover:text-[#f28627]/20 md:text-7xl">
+                  <span className="absolute right-2 top-2 font-[var(--font-display)] text-4xl font-bold text-[#f28627]/[0.07] transition-colors duration-500 group-hover:text-[#f28627]/20 sm:right-4 sm:top-4 sm:text-6xl md:text-7xl">
                     {usp.num}
                   </span>
 
                   <div className="relative">
-                    <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-full bg-[#f28627]/10 text-[#f28627] transition-all duration-500 group-hover:bg-[#f28627] group-hover:text-white group-hover:scale-110">
-                      <usp.icon className="size-6" strokeWidth={1.5} />
+                    <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-full bg-[#f28627]/10 text-[#f28627] transition-all duration-500 group-hover:bg-[#f28627] group-hover:text-white group-hover:scale-110 sm:mb-5 sm:h-12 sm:w-12">
+                      <usp.icon className="size-5 sm:size-6" strokeWidth={1.5} />
                     </div>
-                    <h3 className="font-[var(--font-display)] text-xl font-semibold uppercase tracking-wide text-[#1a1a1a] transition-colors duration-500 group-hover:text-white">
+                    <h3 className="font-[var(--font-display)] text-base font-semibold uppercase tracking-wide text-[#1a1a1a] transition-colors duration-500 group-hover:text-white sm:text-xl">
                       {usp.title}
                     </h3>
                     <p className="mt-3 text-sm leading-relaxed text-[#474747]/70 transition-colors duration-500 group-hover:text-white/60">
@@ -496,7 +501,7 @@ export function HomeSections() {
       {/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
           SECTION 6 — CONTACT CTA (orange bg)
          ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */}
-      <section className="relative overflow-hidden bg-[#f28627]">
+      <section id="contact-cta" className="relative overflow-hidden bg-[#f28627]">
         {/* Decorative shapes */}
         <div className="absolute -left-32 -top-32 h-96 w-96 rounded-full bg-white/5" />
         <div className="absolute -right-16 -bottom-16 h-64 w-64 rounded-full bg-[#d4710e]/30" />
