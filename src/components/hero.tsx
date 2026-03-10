@@ -136,10 +136,10 @@ export function Hero() {
       {/* Decorative orange accent shape */}
       <div
         ref={accentLineRef}
-        className="absolute left-0 top-[38%] z-10 h-[3px] w-[min(35vw,420px)] bg-[#f28627]"
+        className="absolute left-0 top-[38%] z-10 hidden h-[3px] w-[min(35vw,420px)] bg-[#f28627] md:block"
       />
       {/* Vertical accent */}
-      <div className="absolute left-[6vw] top-0 z-10 h-full w-[2px] bg-gradient-to-b from-transparent via-[#f28627]/40 to-transparent" />
+      <div className="absolute left-[6vw] top-0 z-10 hidden h-full w-[2px] bg-gradient-to-b from-transparent via-[#f28627]/40 to-transparent md:block" />
 
       {/* Content */}
       <div

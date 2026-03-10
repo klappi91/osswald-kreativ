@@ -240,7 +240,7 @@ export function HomeSections() {
       <section className="relative overflow-hidden bg-white py-24 md:py-36">
         {/* Background decorative element */}
         <div className="absolute right-0 top-0 h-full w-1/2 bg-[#fafafa] hidden lg:block" />
-        <div className="absolute left-[8vw] top-12 h-[200px] w-[3px] bg-gradient-to-b from-[#f28627] to-transparent" />
+        <div className="absolute left-[8vw] top-12 hidden h-[200px] w-[3px] bg-gradient-to-b from-[#f28627] to-transparent md:block" />
 
         <div className="relative mx-auto max-w-7xl px-6 sm:px-10 lg:px-16">
           <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-12 lg:gap-0">
