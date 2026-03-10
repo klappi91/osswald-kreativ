@@ -25,6 +25,7 @@ const services = [
   { label: "Reparaturen aller Art und Modellvarianten", icon: Wrench },
   { label: "Steinschlag Reparatur", icon: Shield },
   { label: "Unfall- und Karosserieinstandsetzung", icon: Car },
+  { label: "Blechschaden-Ausbesserung (auch Hagelschaden)", icon: Car },
   { label: "Lackierung", icon: Sparkles },
   { label: "Motorinstandsetzung", icon: Cog },
   { label: "Getriebeinstandsetzung", icon: Cog },
@@ -131,6 +132,36 @@ export default function LeistungenPage() {
         </div>
       </section>
 
+      {/* ── Problemlöser USP Callout ── */}
+      <section className="relative overflow-hidden bg-[#1a1a1a] py-16 sm:py-20">
+        {/* Diagonal accent */}
+        <div
+          className="absolute left-0 top-0 h-full w-1/4 bg-[#f28627]/[0.06]"
+          style={{ clipPath: "polygon(0 0, 100% 0, 0 100%)" }}
+        />
+        <div className="relative mx-auto max-w-7xl px-6 sm:px-10 lg:px-16">
+          <div className="flex flex-col items-center gap-8 md:flex-row md:gap-12">
+            {/* Icon block */}
+            <div className="flex h-20 w-20 shrink-0 items-center justify-center bg-[#f28627]">
+              <Wrench className="h-10 w-10 text-white" />
+            </div>
+            {/* Text */}
+            <div>
+              <h2 className="font-[var(--font-display)] text-2xl font-bold uppercase tracking-tight text-white sm:text-3xl">
+                Andere geben auf.{" "}
+                <span className="text-[#f28627]">Wir finden die Lösung.</span>
+              </h2>
+              <p className="mt-4 max-w-2xl text-lg leading-relaxed text-white/70">
+                Oft kommen Kunden mit Problemen, die andere Werkstätten nicht
+                lösen konnten. Wir finden die Lösung &mdash; und wenn wir es
+                nicht schaffen, wissen wir fast immer einen Lösungsweg oder
+                kennen Partner, die helfen können.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* ── Trust / Transparency Section ── */}
       <section className="relative bg-[#f8f8f8] py-20 sm:py-28">
         <div className="mx-auto max-w-7xl px-6 sm:px-10 lg:px-16">
@@ -222,6 +253,7 @@ export default function LeistungenPage() {
                 "Verbindliche Fertigstellungstermine",
                 "Festpreise auf Anfrage moglich",
                 "Original-, Markt- oder Gebrauchtteile — Sie wahlen",
+                "Altteile auf Wunsch zurück oder Schadenserklärung",
               ].map((item, i) => (
                 <div key={i} className="flex items-start gap-4">
                   <div className="flex h-8 w-8 shrink-0 items-center justify-center bg-[#f28627]">
@@ -230,6 +262,17 @@ export default function LeistungenPage() {
                   <p className="text-lg text-white/80">{item}</p>
                 </div>
               ))}
+
+              {/* Garantie-Info */}
+              <div className="mt-6 border-l-2 border-[#f28627]/50 pl-5">
+                <p className="text-sm uppercase tracking-wider text-[#f28627]">
+                  Garantie
+                </p>
+                <p className="mt-1 text-base leading-relaxed text-white/60">
+                  Auf verbaute Neuteile gewähren wir Garantie nach den
+                  Garantiebedingungen der Lieferanten oder Hersteller.
+                </p>
+              </div>
             </div>
           </div>
         </div>

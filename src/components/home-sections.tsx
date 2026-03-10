@@ -19,6 +19,7 @@ import {
   ArrowRight,
   Users,
   Star,
+  Lightbulb,
 } from "lucide-react";
 
 /* ──────────────────────────────────────────
@@ -59,51 +60,6 @@ function AnimatedSection({
 
     return () => ctx.revert();
   }, [delay]);
-
-  return (
-    <div ref={ref} className={className}>
-      {children}
-    </div>
-  );
-}
-
-/* ──────────────────────────────────────────
-   Stagger wrapper — reveals children one by one
-   ────────────────────────────────────────── */
-function StaggerContainer({
-  children,
-  className = "",
-  selector = ".stagger-item",
-}: {
-  children: React.ReactNode;
-  className?: string;
-  selector?: string;
-}) {
-  const ref = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    gsap.registerPlugin(ScrollTrigger);
-    const el = ref.current;
-    if (!el) return;
-
-    const ctx = gsap.context(() => {
-      const items = el.querySelectorAll(selector);
-      gsap.from(items, {
-        y: 60,
-        opacity: 0,
-        duration: 0.7,
-        stagger: 0.12,
-        ease: "power3.out",
-        scrollTrigger: {
-          trigger: el,
-          start: "top 80%",
-          toggleActions: "play none none none",
-        },
-      });
-    });
-
-    return () => ctx.revert();
-  }, [selector]);
 
   return (
     <div ref={ref} className={className}>
@@ -168,32 +124,38 @@ const services = [
     icon: Wrench,
     title: "Reparaturen aller Art",
     desc: "Von Bremsen bis Auspuff — wir reparieren zuverlässig und schnell.",
+    href: "/leistungen",
   },
   {
     icon: Shield,
     title: "Steinschlag Reparatur",
     desc: "Schnelle Beseitigung von Steinschlagschäden an der Windschutzscheibe.",
     badge: "NEU",
+    href: "/leistungen",
   },
   {
     icon: Paintbrush,
     title: "Karosserie & Lackierung",
     desc: "Professionelle Karosseriearbeit und Lackierung nach höchsten Standards.",
+    href: "/leistungen",
   },
   {
     icon: Cog,
     title: "Motor & Getriebe",
     desc: "Diagnose und Reparatur von Motor- und Getriebeproblemen aller Art.",
+    href: "/leistungen",
   },
   {
     icon: CheckCircle,
     title: "TÜV / AU",
     desc: "Hauptuntersuchung und Abgasuntersuchung direkt bei uns im Haus.",
+    href: "/leistungen",
   },
   {
     icon: Car,
     title: "Oldtimer & US-Cars",
     desc: "Spezialwissen für klassische Fahrzeuge und amerikanische Automobile.",
+    href: "/leistungen",
   },
 ];
 
@@ -203,9 +165,9 @@ const services = [
 const usps = [
   {
     num: "01",
-    icon: Clock,
-    title: "Sofortservice",
-    desc: "Kein Termin nötig — kommen Sie einfach vorbei.",
+    icon: Lightbulb,
+    title: "Problemlöser",
+    desc: "Wir finden die Lösung — auch wenn andere Werkstätten aufgeben.",
   },
   {
     num: "02",
@@ -299,8 +261,9 @@ export function HomeSections() {
               </blockquote>
               <p className="mt-6 text-base leading-relaxed text-[#474747]/80 md:text-lg">
                 Mit unserem kompetenten Rundum-Service für alle Marken, bietet
-                Ihnen unsere Kfz-Reparaturwerkstatt Sofortservice und
-                Meisterqualität zu erschwinglichen Preisen.
+                Ihnen unsere Kfz-Reparaturwerkstatt Meisterqualität zu
+                erschwinglichen Preisen. Auf verbaute Neuteile gewähren wir
+                selbstverständlich Garantie nach den Bedingungen der Hersteller.
               </p>
               <Link
                 href="/leistungen"
@@ -371,42 +334,40 @@ export function HomeSections() {
           </AnimatedSection>
 
           {/* Service cards grid */}
-          <StaggerContainer
-            className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3"
-            selector=".stagger-item"
-          >
+          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {services.map((service) => (
-              <Link
-                key={service.title}
-                href="/leistungen"
-                className="stagger-item group relative overflow-hidden rounded-sm border border-white/5 bg-[#2a2a2a] p-8 transition-all duration-500 hover:border-[#f28627]/30 hover:bg-[#2a2a2a]/80 hover:shadow-xl hover:shadow-[#f28627]/5"
-              >
-                {/* Hover accent line */}
-                <div className="absolute left-0 top-0 h-full w-[3px] scale-y-0 bg-[#f28627] transition-transform duration-500 origin-top group-hover:scale-y-100" />
+              <AnimatedSection key={service.title}>
+                <Link
+                  href={service.href}
+                  className="group relative block overflow-hidden rounded-sm border border-white/5 bg-[#2a2a2a] p-8 transition-all duration-500 hover:border-[#f28627]/30 hover:bg-[#2a2a2a]/80 hover:shadow-xl hover:shadow-[#f28627]/5"
+                >
+                  {/* Hover accent line */}
+                  <div className="absolute left-0 top-0 h-full w-[3px] scale-y-0 bg-[#f28627] transition-transform duration-500 origin-top group-hover:scale-y-100" />
 
-                <div className="relative">
-                  {service.badge && (
-                    <span className="absolute -right-2 -top-2 rounded-sm bg-[#f28627] px-3 py-1 text-xs font-bold uppercase tracking-wider text-white shadow-lg">
-                      {service.badge}
-                    </span>
-                  )}
-                  <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-sm bg-[#f28627]/10 text-[#f28627] transition-colors duration-300 group-hover:bg-[#f28627] group-hover:text-white">
-                    <service.icon className="size-7" strokeWidth={1.5} />
+                  <div className="relative">
+                    {service.badge && (
+                      <span className="absolute -right-2 -top-2 rounded-sm bg-[#f28627] px-3 py-1 text-xs font-bold uppercase tracking-wider text-white shadow-lg">
+                        {service.badge}
+                      </span>
+                    )}
+                    <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-sm bg-[#f28627]/10 text-[#f28627] transition-colors duration-300 group-hover:bg-[#f28627] group-hover:text-white">
+                      <service.icon className="size-7" strokeWidth={1.5} />
+                    </div>
+                    <h3 className="font-[var(--font-display)] text-xl font-semibold uppercase tracking-wide text-white">
+                      {service.title}
+                    </h3>
+                    <p className="mt-3 text-sm leading-relaxed text-white/50 group-hover:text-white/70 transition-colors duration-300">
+                      {service.desc}
+                    </p>
+                    <div className="mt-6 flex items-center gap-2 text-sm font-semibold text-[#f28627] opacity-0 transition-all duration-300 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0">
+                      Mehr erfahren
+                      <ArrowRight className="size-4" />
+                    </div>
                   </div>
-                  <h3 className="font-[var(--font-display)] text-xl font-semibold uppercase tracking-wide text-white">
-                    {service.title}
-                  </h3>
-                  <p className="mt-3 text-sm leading-relaxed text-white/50 group-hover:text-white/70 transition-colors duration-300">
-                    {service.desc}
-                  </p>
-                  <div className="mt-6 flex items-center gap-2 text-sm font-semibold text-[#f28627] opacity-0 transition-all duration-300 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0">
-                    Mehr erfahren
-                    <ArrowRight className="size-4" />
-                  </div>
-                </div>
-              </Link>
+                </Link>
+              </AnimatedSection>
             ))}
-          </StaggerContainer>
+          </div>
 
           {/* CTA under services */}
           <AnimatedSection className="mt-12 text-center">
@@ -446,36 +407,34 @@ export function HomeSections() {
           </AnimatedSection>
 
           {/* USP grid — alternating layout */}
-          <StaggerContainer
-            className="grid grid-cols-1 gap-0 md:grid-cols-2 lg:grid-cols-3"
-            selector=".stagger-item"
-          >
+          <div className="grid grid-cols-1 gap-0 md:grid-cols-2 lg:grid-cols-3">
             {usps.map((usp, i) => (
-              <div
-                key={usp.title}
-                className={`stagger-item group relative border border-[#e5e5e5]/60 p-8 transition-all duration-500 hover:bg-[#1a1a1a] hover:border-[#1a1a1a] md:p-10 ${
-                  i % 2 === 1 ? "md:translate-y-8" : ""
-                }`}
-              >
-                {/* Large number background */}
-                <span className="absolute right-4 top-4 font-[var(--font-display)] text-6xl font-bold text-[#f28627]/[0.07] transition-colors duration-500 group-hover:text-[#f28627]/20 md:text-7xl">
-                  {usp.num}
-                </span>
+              <AnimatedSection key={usp.title}>
+                <div
+                  className={`group relative border border-[#e5e5e5]/60 p-8 transition-all duration-500 hover:bg-[#1a1a1a] hover:border-[#1a1a1a] md:p-10 ${
+                    i % 2 === 1 ? "md:translate-y-8" : ""
+                  }`}
+                >
+                  {/* Large number background */}
+                  <span className="absolute right-4 top-4 font-[var(--font-display)] text-6xl font-bold text-[#f28627]/[0.07] transition-colors duration-500 group-hover:text-[#f28627]/20 md:text-7xl">
+                    {usp.num}
+                  </span>
 
-                <div className="relative">
-                  <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-full bg-[#f28627]/10 text-[#f28627] transition-all duration-500 group-hover:bg-[#f28627] group-hover:text-white group-hover:scale-110">
-                    <usp.icon className="size-6" strokeWidth={1.5} />
+                  <div className="relative">
+                    <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-full bg-[#f28627]/10 text-[#f28627] transition-all duration-500 group-hover:bg-[#f28627] group-hover:text-white group-hover:scale-110">
+                      <usp.icon className="size-6" strokeWidth={1.5} />
+                    </div>
+                    <h3 className="font-[var(--font-display)] text-xl font-semibold uppercase tracking-wide text-[#1a1a1a] transition-colors duration-500 group-hover:text-white">
+                      {usp.title}
+                    </h3>
+                    <p className="mt-3 text-sm leading-relaxed text-[#474747]/70 transition-colors duration-500 group-hover:text-white/60">
+                      {usp.desc}
+                    </p>
                   </div>
-                  <h3 className="font-[var(--font-display)] text-xl font-semibold uppercase tracking-wide text-[#1a1a1a] transition-colors duration-500 group-hover:text-white">
-                    {usp.title}
-                  </h3>
-                  <p className="mt-3 text-sm leading-relaxed text-[#474747]/70 transition-colors duration-500 group-hover:text-white/60">
-                    {usp.desc}
-                  </p>
                 </div>
-              </div>
+              </AnimatedSection>
             ))}
-          </StaggerContainer>
+          </div>
         </div>
       </section>
 

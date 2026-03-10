@@ -1,7 +1,20 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, Phone, Clock } from "lucide-react";
+import {
+  ArrowRight,
+  Phone,
+  Clock,
+  MapPin,
+  FileText,
+  KeyRound,
+  CalendarCheck,
+  CheckCircle2,
+  ShieldCheck,
+  ClipboardList,
+  Mail,
+  CreditCard,
+} from "lucide-react";
 
 export const metadata: Metadata = {
   title: "24-Stunden-Annahme",
@@ -105,6 +118,238 @@ export default function AnnahmePage() {
                 </span>
               </Link>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── So funktioniert's ── */}
+      <section className="relative overflow-hidden bg-[#1a1a1a] py-20 sm:py-28">
+        <div className="pointer-events-none absolute -right-10 bottom-0 select-none font-[var(--font-display)] text-[18rem] font-bold leading-none text-white/[0.03]">
+          1-2-3
+        </div>
+
+        <div className="mx-auto max-w-7xl px-6 sm:px-10 lg:px-16">
+          <div className="mb-16 flex items-center gap-4">
+            <CalendarCheck className="h-10 w-10 shrink-0 text-[#f28627]" />
+            <div className="h-1 w-16 bg-[#f28627]" />
+          </div>
+
+          <h2 className="font-[var(--font-display)] text-3xl font-bold uppercase leading-tight tracking-tight text-white sm:text-4xl">
+            So funktioniert&apos;s &mdash;{" "}
+            <span className="text-[#f28627]">in 3 Schritten</span>
+          </h2>
+
+          <p className="mt-6 max-w-2xl text-xl leading-relaxed text-white/60">
+            Unsere 24-Stunden-Annahme ist unkompliziert. Kein Papierkram, keine
+            langen Wartezeiten &mdash; nur drei einfache Schritte.
+          </p>
+
+          <div className="mt-16 grid gap-8 sm:grid-cols-3">
+            {/* Step 1 */}
+            <div className="group relative border-2 border-white/10 bg-white/5 p-8 transition-all duration-300 hover:border-[#f28627]/50 hover:bg-white/[0.08]">
+              <div className="absolute -top-5 left-8 flex h-10 w-10 items-center justify-center bg-[#f28627] font-[var(--font-display)] text-lg font-bold text-white -skew-x-6">
+                <span className="skew-x-6">1</span>
+              </div>
+              <MapPin className="mb-6 mt-4 h-8 w-8 text-[#f28627]" />
+              <h3 className="font-[var(--font-display)] text-xl font-bold uppercase tracking-wider text-white">
+                Fahrzeug abstellen
+              </h3>
+              <p className="mt-4 leading-relaxed text-white/60">
+                Stellen Sie Ihr Fahrzeug jederzeit auf unserem Gelande ab &mdash;
+                egal ob fruh morgens, spat abends oder am Wochenende.
+              </p>
+              <p className="mt-3 text-sm font-medium text-[#f28627]">
+                Auf dem Esch 21, 49356 Diepholz
+              </p>
+              <div className="absolute bottom-0 left-0 h-1 w-0 bg-[#f28627] transition-all duration-500 group-hover:w-full" />
+            </div>
+
+            {/* Step 2 */}
+            <div className="group relative border-2 border-white/10 bg-white/5 p-8 transition-all duration-300 hover:border-[#f28627]/50 hover:bg-white/[0.08]">
+              <div className="absolute -top-5 left-8 flex h-10 w-10 items-center justify-center bg-[#f28627] font-[var(--font-display)] text-lg font-bold text-white -skew-x-6">
+                <span className="skew-x-6">2</span>
+              </div>
+              <KeyRound className="mb-6 mt-4 h-8 w-8 text-[#f28627]" />
+              <h3 className="font-[var(--font-display)] text-xl font-bold uppercase tracking-wider text-white">
+                Schlussel einwerfen
+              </h3>
+              <p className="mt-4 leading-relaxed text-white/60">
+                Werfen Sie den Fahrzeugschlussel zusammen mit einem kurzen
+                Auftragszettel in unseren Briefkasten am Eingang der Werkstatt.
+              </p>
+              <p className="mt-3 text-sm font-medium text-[#f28627]">
+                Auftragszettel liegt vor Ort bereit
+              </p>
+              <div className="absolute bottom-0 left-0 h-1 w-0 bg-[#f28627] transition-all duration-500 group-hover:w-full" />
+            </div>
+
+            {/* Step 3 */}
+            <div className="group relative border-2 border-white/10 bg-white/5 p-8 transition-all duration-300 hover:border-[#f28627]/50 hover:bg-white/[0.08]">
+              <div className="absolute -top-5 left-8 flex h-10 w-10 items-center justify-center bg-[#f28627] font-[var(--font-display)] text-lg font-bold text-white -skew-x-6">
+                <span className="skew-x-6">3</span>
+              </div>
+              <Phone className="mb-6 mt-4 h-8 w-8 text-[#f28627]" />
+              <h3 className="font-[var(--font-display)] text-xl font-bold uppercase tracking-wider text-white">
+                Wir melden uns
+              </h3>
+              <p className="mt-4 leading-relaxed text-white/60">
+                Wir kontaktieren Sie am nachsten Werktag zur
+                Auftragsbestatigung und Terminabsprache. Kein Aufwand fur Sie.
+              </p>
+              <p className="mt-3 text-sm font-medium text-[#f28627]">
+                Ruckmeldung am nachsten Werktag
+              </p>
+              <div className="absolute bottom-0 left-0 h-1 w-0 bg-[#f28627] transition-all duration-500 group-hover:w-full" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── Was Sie mitbringen sollten ── */}
+      <section className="relative overflow-hidden bg-white py-20 sm:py-28">
+        <div className="pointer-events-none absolute -left-16 bottom-10 select-none font-[var(--font-display)] text-[18rem] font-bold leading-none text-[#f28627]/[0.04]">
+          &#10003;
+        </div>
+
+        <div className="mx-auto max-w-7xl px-6 sm:px-10 lg:px-16">
+          <div className="mx-auto max-w-3xl">
+            <div className="mb-8 flex items-center gap-4">
+              <ClipboardList className="h-10 w-10 shrink-0 text-[#f28627]" />
+              <div className="h-1 w-16 bg-[#f28627]" />
+            </div>
+
+            <h2 className="font-[var(--font-display)] text-3xl font-bold uppercase leading-tight tracking-tight text-[#1a1a1a] sm:text-4xl">
+              Was Sie{" "}
+              <span className="text-[#f28627]">mitbringen sollten</span>
+            </h2>
+
+            <p className="mt-6 text-xl leading-relaxed text-[#474747]">
+              Damit wir Ihr Fahrzeug schnellstmoglich bearbeiten konnen,
+              legen Sie bitte folgende Dinge zum Schlussel in den Briefkasten:
+            </p>
+
+            <div className="mt-12 space-y-6">
+              {[
+                {
+                  icon: KeyRound,
+                  title: "Fahrzeugschlussel",
+                  text: "Alle benotigten Schlussel fur Ihr Fahrzeug.",
+                },
+                {
+                  icon: FileText,
+                  title: "Problembeschreibung / gewunschter Service",
+                  text: "Kurze Beschreibung, was gemacht werden soll — z.\u00A0B. Inspektion, Bremsen prufen, komisches Gerausch etc.",
+                },
+                {
+                  icon: Mail,
+                  title: "Ihre Kontaktdaten",
+                  text: "Telefonnummer und E-Mail-Adresse, damit wir Sie fur Ruckfragen und die Terminabsprache erreichen.",
+                },
+                {
+                  icon: CreditCard,
+                  title: "Fahrzeugschein (bei TUV/AU)",
+                  text: "Wird der TUV oder die Abgasuntersuchung fallig, bringen Sie bitte den Fahrzeugschein (Zulassungsbescheinigung Teil I) mit.",
+                },
+              ].map((item) => (
+                <div
+                  key={item.title}
+                  className="flex gap-5 border-l-4 border-transparent p-4 transition-all duration-300 hover:border-[#f28627] hover:bg-[#f28627]/5"
+                >
+                  <item.icon className="mt-1 h-6 w-6 shrink-0 text-[#f28627]" />
+                  <div>
+                    <h3 className="font-[var(--font-display)] text-lg font-bold uppercase tracking-wider text-[#1a1a1a]">
+                      {item.title}
+                    </h3>
+                    <p className="mt-1 leading-relaxed text-[#474747]">
+                      {item.text}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* Tip box */}
+            <div className="mt-10 border-l-4 border-[#f28627] bg-[#f28627]/5 p-6">
+              <p className="font-[var(--font-display)] text-lg font-bold uppercase tracking-wider text-[#1a1a1a]">
+                Tipp:
+              </p>
+              <p className="mt-2 leading-relaxed text-[#474747]">
+                Auftragszettel liegen vor Ort an unserem Briefkasten bereit. Sie
+                konnen die Angaben aber auch auf einem eigenen Zettel notieren.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── Vorteile der 24h-Annahme ── */}
+      <section className="relative overflow-hidden bg-[#1a1a1a] py-20 sm:py-28">
+        <div className="pointer-events-none absolute -right-16 top-10 select-none font-[var(--font-display)] text-[20rem] font-bold leading-none text-white/[0.03]">
+          24h
+        </div>
+
+        <div className="mx-auto max-w-7xl px-6 sm:px-10 lg:px-16">
+          <div className="mb-16 flex items-center gap-4">
+            <CheckCircle2 className="h-10 w-10 shrink-0 text-[#f28627]" />
+            <div className="h-1 w-16 bg-[#f28627]" />
+          </div>
+
+          <h2 className="font-[var(--font-display)] text-3xl font-bold uppercase leading-tight tracking-tight text-white sm:text-4xl">
+            Ihre Vorteile &mdash;{" "}
+            <span className="text-[#f28627]">auf einen Blick</span>
+          </h2>
+
+          <div className="mt-16 grid gap-8 sm:grid-cols-2">
+            {[
+              {
+                icon: Clock,
+                title: "Flexibel",
+                text: "Geben Sie Ihr Fahrzeug ab, wann es Ihnen passt — auch abends, nachts oder am Wochenende. Unsere Annahme ist rund um die Uhr verfugbar.",
+              },
+              {
+                icon: ArrowRight,
+                title: "Ohne Wartezeit",
+                text: "Kein Stehen in der Schlange, kein Warten auf einen freien Berater. Schlussel einwerfen und fertig.",
+              },
+              {
+                icon: CalendarCheck,
+                title: "Planbar",
+                text: "Ihr Fahrzeug steht morgens bereit, wenn unsere Mechaniker den Tag beginnen. So kann der Auftrag schnellstmoglich bearbeitet werden.",
+              },
+              {
+                icon: ShieldCheck,
+                title: "Sicher",
+                text: "Unser Gelande ist eingezaunt und beleuchtet. Ihr Fahrzeug steht sicher, bis wir uns am nachsten Werktag darum kummern.",
+              },
+            ].map((item) => (
+              <div
+                key={item.title}
+                className="group relative border-2 border-white/10 bg-white/5 p-8 transition-all duration-300 hover:border-[#f28627]/50 hover:bg-white/[0.08]"
+              >
+                <item.icon className="mb-4 h-8 w-8 text-[#f28627]" />
+                <h3 className="font-[var(--font-display)] text-xl font-bold uppercase tracking-wider text-white">
+                  {item.title}
+                </h3>
+                <p className="mt-4 leading-relaxed text-white/60">
+                  {item.text}
+                </p>
+                <div className="absolute bottom-0 left-0 h-1 w-0 bg-[#f28627] transition-all duration-500 group-hover:w-full" />
+              </div>
+            ))}
+          </div>
+
+          {/* CTA */}
+          <div className="mt-16">
+            <Link
+              href="/kontakt"
+              className="group inline-flex items-center gap-3 bg-[#f28627] px-8 py-4 font-[var(--font-display)] text-lg font-bold uppercase tracking-wider text-white transition-all duration-300 hover:bg-[#d4710e] hover:shadow-xl hover:shadow-[#f28627]/30 -skew-x-6"
+            >
+              <span className="inline-flex items-center gap-3 skew-x-6">
+                <Phone className="h-5 w-5" />
+                Fragen? Kontaktieren Sie uns
+                <ArrowRight className="h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />
+              </span>
+            </Link>
           </div>
         </div>
       </section>
